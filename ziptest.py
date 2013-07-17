@@ -41,5 +41,5 @@ assert zip((), ()) == my_zip((),())
 assert zip([1, 2, 3]) == my_zip([1,2,3])
 assert zip((1, 2, 3), [1, 2, 3]) == my_zip((1, 2, 3), [1, 2, 3])
 assert zip(()) == my_zip(())
-assert zip() == my_zip()
-print zip(set([1, 2, 3]))
+assert zip() == my_zip() 
+print zip(set([1, 2, 3])) # need to fix this to work with my_zip
