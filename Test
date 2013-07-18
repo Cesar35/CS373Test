@@ -1,0 +1,156 @@
+FUNCTIONS:
+
+def f(x, y, z):
+    return [x, y, x+z]
+
+def g(x = 1, y = 3, z = 10):
+    return [x+z, y+x, z+y]
+    
+t = (5, 4)
+s = set([3, 7, 9])
+r = (8)
+d = {"x" : 5, "z" : 9, "y": 20}
+
+
+1. Which one is a valid function call?
+a. f(t)
+b. f(4, t)
+c. f(*t, 4)
+d. f(4, *t)
+
+2. Which one is a valid function call?
+a. f(t, r)
+b. f(4, t, r)
+c. f(*t, 4, r)
+d. f(4, *t, r)
+
+3. Which one is a valid function call?
+a. g(*t)
+b. g(4, t)
+c. g(t, 4)
+d. g(*t, 4)
+
+4. Which one is a valid function call?
+a. g(t)
+b. g(s)
+c. g(*d)
+d. g(*r)
+
+5. Which is not a valid function call?
+a. f(t, 4, s)
+b. f(4, t, 5)
+c. f(r, *t)
+d. f(r, t, 8)
+
+6. Which is not a valid function call?
+a. f(t, 4, ())
+b. f(4, 5, *t)
+c. f(r, 4, 5)
+d. f(r, s, 8)
+
+7. Which is not a valid function call?
+a. g(*t)
+b. g(1, *d)
+c. g(*s)
+d. g(t, s, d)
+
+8. Which is not a valid function call?
+a. g(t)
+b. g(1, d)
+c. g(s)
+d. g(t, s, *d)
+
+
+def f2(x, y, *z):
+    return [x, y, z]
+
+def g2(x = 1, z = 3, y = 10):
+    return [x+z, y+x, z+y]
+
+9. What would be output of following call: f2(s, t, *d)?
+a. [(3, 7), (5, 4), {'y': 20, 'x': 5, 'z': 9}]
+b. [set([3,7]), (5, 4), {'y': 20, 'x': 5, 'z': 9}]
+c. [set([3,7]), (5, 4), ('x', 'y', 'z'))]
+d. [set([3,7]), (5, 4), (5, 9, 20)]
+
+10. What would be output of following call: f2(s, t, **d)?
+a. [(3, 7), (5, 4), {'y': 20, 'x': 5, 'z': 9}]
+b. [set([3,7]), (5, 4), ("x", "z", "y")]
+c. [set([3,7]), (5, 4), (5, 9, 20)]
+d. Does not compile
+
+11. What would be output of following call: g2(s, d)?
+a. [set([3,7]), {'y': 20, 'x': 5, 'z': 9}, 3]
+b. [set([3, 7]), (), {'y': 20, 'x': 5, 'z': 9}]
+c. [(3, 7), {'y': 20, 'x': 5, 'z': 9}, ()]
+d. [set([3,7]), 3, ('x', 'z', 'y')]
+
+12. What would be output of following call: g2(s, *d)?
+a. [set([3,7]), {'y': 20, 'x': 5, 'z': 9}, 3]
+b. [set([3, 7]), (),{'y': 20, 'x': 5, 'z': 9}
+c. [(3, 7), 'z', ('x', 'y')]
+d. [set([3,7]), 'z', ('x', 'y')]
+
+
+def f3((x, y), *z):
+    return [x, y, z]
+
+def g3(x = 1, z = 3, **y):
+    return [x, y, z]
+
+l = [3, 4, 5]
+d = {"a" : 5, "b" : 20, "c": 9}
+
+13. What would be output of following call: f3(t, *l)?
+a. [5, 4, (3, 4, 5)]
+b. [5, 4, 3, 4, 5]
+c. [5, 4, ([3, 4, 5],)]
+d. [4, 5, ([3, 4, 5],)]
+
+14. What would be output of following call: f3(t, l)?
+a. [5, 4, (3, 4, 5)]
+b. [5, 4, 3, 4, 5]
+c. [5, 4, ([3, 4, 5],)]
+d. [4, 5, ([3, 4, 5],)]
+
+15. What would be output of following call: g3(t,l, **d)?
+a. [(5, 4), {'a': 5, 'c': 9, 'b': 20}, [3, 4, 5]]
+b. [5, 4, {'a': 5, 'c': 9, 'b': 20}, [3, 4, 5]]
+c. [(5, 4), {'a': 5, 'b': 20, 'c' : 9}, 3, 4, 5]
+d. [5, 4, [3, 4, 5], {'a': 5, 'c': 9, 'b': 20}]
+
+16. What would be output of following call: g3(t, l, a = 5, b = 20)?
+a. [(5, 4), 5, 20, [3, 4, 5]]
+b. [(5, 4), {'a': 5, 'b': 20}, [3, 4, 5]]
+c. [5, 4, {'a': 5, 'b': 20}, 3, 4, 5]
+d. Does not compile
+
+ASSIGNMENT:
+
+
+17. Which is a valid assignment?
+a. a, b = 2, 3
+b. a, b = 2
+c. b = (a = 2)
+d. (a = b) = 2
+
+18. Which is not a valid assignment?
+a. a, b = 2, 3
+b. a, b = [2, 3]
+c. (a, b) = 2
+d. a = b = c = 2
+
+19. What are a and b respectively after this: a, b = b, a = 4, 5?
+a. a = 4, b = 5
+b. a = 5, b = 4
+
+20. What are a and b respectively after this: a, b = b, a = 5, 4?
+a. a = 4, b = 5
+b. a = 5, b = 4
+
+
+MAP:
+
+
+
+MAX:
